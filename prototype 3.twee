@@ -1,0 +1,16 @@
+:: StoryTitle
+prototype 3
+
+
+:: StoryData
+{
+  "ifid": "AAD252A2-66BA-4A17-8532-874B72827D43",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Untitled Passage",
+  "zoom": 1
+}
+
+
+:: Untitled Passage {"position":"700,325","size":"100,100"}
+hello world
