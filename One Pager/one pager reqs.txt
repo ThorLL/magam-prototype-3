@@ -1,0 +1,9 @@
+Make sure to include your One Pager (preferably in PDF format). We suggest you name your file using the following naming convention:
+
+NameSurnameX1_NameSurnameX2_[...]_NameSurnameXN_PrototypeName.pdf
+
+where 3<n<4
+
+Note: the members of a group can either submit the same onepager individually, or can have one member of the group submitting the onepager for the whole group. The only requirement is that the names of every group member are listed both in the file name and in the onepager itself.
+
+[Prototypes are not graded]
