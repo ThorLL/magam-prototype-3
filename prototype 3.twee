@@ -4,13 +4,93 @@ prototype 3
 
 :: StoryData
 {
-  "ifid": "AAD252A2-66BA-4A17-8532-874B72827D43",
+  "ifid": "04C166D7-D1E5-4886-A1EF-A4683610BD11",
   "format": "Harlowe",
   "format-version": "3.3.7",
   "start": "Untitled Passage",
+  "tag-colors": {
+    "tunnel": "purple",
+    "forest": "green",
+    "faintLight": "blue",
+    "lightSource": "yellow",
+    "tunnelRed": "red"
+  },
   "zoom": 1
 }
 
 
-:: Untitled Passage {"position":"700,325","size":"100,100"}
-hello world
+:: Untitled Passage [forest] {"position":"700,325","size":"100,100"}
+You are travelling through woods and stumble upon overgrown ruins of what appears to be the entrance to some [[bunker tunnels->bunkerTunnelsDark]].
+
+
+:: bunkerTunnelsDark {"position":"700,450","size":"100,100"}
+You enter the damp and dark tunnel. Surrounding you are multiple switches and abandoned machinery. Suddenly, you too feel [[long-forgotten->bunkerTunnelsLight]], a feeling that cannot be quite shaken.
+
+
+:: bunkerTunnelsLight [faintLight] {"position":"700,575","size":"100,100"}
+Your eyes adjust to the darkness and you see that there seems to be a faint light ahead of you.
+
+[[Check the source of the light->lightSource]]
+[[Turn left towards the dark tunnel->darkTunnel]]
+
+
+:: darkTunnel [tunnel] {"position":"825,700","size":"100,100"}
+You step on some small metallic object and the clank echoes through the darkness. 
+(set:$hasKey to "true")
+[[Go back the way you can.->bunkerTunnelsLight]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:: didNotEat [lightSource] {"position":"700,825","size":"100,100"}
+With every bit of willpower [[you resist the urge to eat the smiley sticker->ending2]].
+
+
+:: eatSticker [lightSource] {"position":"825,825","size":"100,100"}
+Your urges overcome you, as [[you start eating the sticker->ending1]].
+
+
+:: ending1 [lightSource] {"position":"825,950","size":"100,100"}
+
+
+
+:: ending2 [lightSource] {"position":"700,950","size":"100,100"}
+
+
+
+:: lightSource [lightSource] {"position":"700,700","size":"100,100"}
+On the floor you see a small smiley sticker, a studden urge befalls you.
+<style> img {
+	max-width:40px;
+    max-heigh:40px;
+}
+</style>
+<img
+src="https://freepngimg.com/thumb/categories/1688.png">
+</div>
+[[Resist the urge to eat the sticker->didNotEat]]
+[[Eat the sticker->eatSticker]]
+
+
+:: StoryStylesheet [stylesheet]
+tw-story[tags~="tunnel"] {
+	background-image:url("https://github.com/ThorLL/magam-prototype-3/blob/main/resources/corridor_test_stucki.jpeg?raw=true");
+  	background-size:cover;
+  	color: yellow;
+}
+
+tw-sidebar {
+    display: none;
+}
+
+tw-link {color: yellow}
