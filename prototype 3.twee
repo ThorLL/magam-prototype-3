@@ -7,90 +7,132 @@ prototype 3
   "ifid": "04C166D7-D1E5-4886-A1EF-A4683610BD11",
   "format": "Harlowe",
   "format-version": "3.3.7",
-  "start": "Untitled Passage",
+  "start": "bunkerexterior",
   "tag-colors": {
     "tunnel": "purple",
     "forest": "green",
     "faintLight": "blue",
     "lightSource": "yellow",
-    "tunnelRed": "red"
+    "tunnelRed": "red",
+    "outside": "red"
   },
   "zoom": 1
 }
 
 
-:: Untitled Passage [forest] {"position":"700,325","size":"100,100"}
-You are travelling through woods and stumble upon overgrown ruins of what appears to be the entrance to some [[bunker tunnels->bunkerTunnelsDark]].
-
-
 :: bunkerTunnelsDark {"position":"700,450","size":"100,100"}
-You enter the damp and dark tunnel. Surrounding you are multiple switches and abandoned machinery. Suddenly, you too feel [[long-forgotten->bunkerTunnelsLight]], a feeling that cannot be quite shaken.
-
-
-:: bunkerTunnelsLight [faintLight] {"position":"700,575","size":"100,100"}
-Your eyes adjust to the darkness and you see that there seems to be a faint light ahead of you.
-
-[[Check the source of the light->lightSource]]
-[[Turn left towards the dark tunnel->darkTunnel]]
-
-
-:: darkTunnel [tunnel] {"position":"825,700","size":"100,100"}
-You step on some small metallic object and the clank echoes through the darkness. 
-(set:$hasKey to "true")
-[[Go back the way you can.->bunkerTunnelsLight]]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:: didNotEat [lightSource] {"position":"700,825","size":"100,100"}
-With every bit of willpower [[you resist the urge to eat the smiley sticker->ending2]].
-
-
-:: eatSticker [lightSource] {"position":"825,825","size":"100,100"}
-Your urges overcome you, as [[you start eating the sticker->ending1]].
-
-
-:: ending1 [lightSource] {"position":"825,950","size":"100,100"}
-
-
-
-:: ending2 [lightSource] {"position":"700,950","size":"100,100"}
-
-
-
-:: lightSource [lightSource] {"position":"700,700","size":"100,100"}
-On the floor you see a small smiley sticker, a studden urge befalls you.
 <style> img {
-	max-width:40px;
-    max-heigh:40px;
+	min-width:800px;
+    min-height:600px;
 }
 </style>
-<img
-src="https://freepngimg.com/thumb/categories/1688.png">
+<img src="https://github.com/ThorLL/magam-prototype-3/blob/main/resources/entertunnel.png?raw=true">
 </div>
-[[Resist the urge to eat the sticker->didNotEat]]
+You enter the damp and dark tunnel. 
+Surrounding you are multiple switches and abandoned machinery. 
+Suddenly, you too feel [[long-forgotten->bunkerTunnelsLight]], a feeling that cannot be quite shaken.
+
+
+:: bunkerTunnelsLight {"position":"700,575","size":"100,100"}
+<style> img {
+	min-width:800px;
+    min-height:600px;
+}
+</style>
+<img src="https://github.com/ThorLL/magam-prototype-3/blob/main/resources/entertunnelwsticker.png?raw=true">
+</div>
+Your eyes adjust to the darkness and you see that there seems to be a faint light ahead of you.
+You walk up to it with caution and moments later notice a [[yellow smiley sticker->lightSource]] on the wall.
+
+
+
+
+:: bunkerexterior {"position":"700,325","size":"100,100"}
+<style> img {
+	min-width:800px;
+    min-height:600px;
+}
+</style>
+<img src="https://github.com/ThorLL/magam-prototype-3/blob/main/resources/bunkerexterior.png?raw=true">
+</div>
+
+You are travelling through woods and stumble upon overgrown ruins
+of what appears to be the entrance to some [[bunker tunnels->bunkerTunnelsDark]].
+
+
+
+:: eatSticker {"position":"825,825","size":"100,100"}
+<style> img {
+	min-width:800px;
+    min-height:600px;
+}
+</style>
+<img src="https://github.com/ThorLL/magam-prototype-3/blob/main/resources/entertunnel.png?raw=true">
+</div>
+The smiley sticker has a sweet taste to it.
+[[Yellow YUM->ending1]]
+
+
+:: ending1 {"position":"825,950","size":"100,100"}
+<style> img {
+	min-width:800px;
+    min-height:600px;
+}
+</style>
+<img src="https://github.com/ThorLL/magam-prototype-3/blob/main/resources/endingb.png?raw=true">
+</div>
+The feeling of uneasiness that you felt in your stomach before begins to take on a new form. 
+Your vision begins to whirl.
+Your body enters panic mode as you feel your insides melting.
+The world turns dark. The last thing you remember seeing are sticker all over the place.
+
+
+:: ending2 {"position":"700,825","size":"100,100"}
+<style> img {
+	min-width:800px;
+    min-height:600px;
+}
+</style>
+<img src="https://github.com/ThorLL/magam-prototype-3/blob/main/resources/endinga.png?raw=true">
+</div>
+You somehow resist the intense urge to devour the sticker.
+Standing upright you decide to [[leave this place the way you came->outside]].
+
+
+:: lightSource {"position":"700,700","size":"100,100"}
+<style> img {
+	min-width:800px;
+    min-height:600px;
+}
+</style>
+<img src="https://github.com/ThorLL/magam-prototype-3/blob/main/resources/entertunnelwsticker.png?raw=true">
+</div>
+You really want to eat the sticker.
+
 [[Eat the sticker->eatSticker]]
+[[Resist the urge to eat the sticker->ending2]]
+
+
+
+:: outside [outside] {"position":"700,950","size":"100,100"}
+The light from the outside overwhelms your eyes for a few seconds. You could swear the sky was not that yellowish hue before.
+You try to shrug it off and continue walking. Hopefully you will not get lost again...
+
 
 
 :: StoryStylesheet [stylesheet]
-tw-story[tags~="tunnel"] {
-	background-image:url("https://github.com/ThorLL/magam-prototype-3/blob/main/resources/corridor_test_stucki.jpeg?raw=true");
-  	background-size:cover;
-  	color: yellow;
+tw-story[tags~="outside"] {
+	color:grey;
+  background-color:white;
+}
+
+tw-link {color: #FFF000}
+
+tw-story {
+	font-family:Overpass Mono;
+ 	text-align: center;
 }
 
 tw-sidebar {
     display: none;
 }
-
-tw-link {color: yellow}
